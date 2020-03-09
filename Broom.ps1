@@ -304,7 +304,7 @@ Function Clear_Edge ($a) {
         Remove-Item -Path "C:\Users\$($_.Name)\AppData\Local\Packages\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\AC\#!001\MicrosoftEdge\User\Default\AppCache\*" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
         Remove-Item -Path "C:\Users\$($_.Name)\AppData\Local\Packages\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\AC\#!002\MicrosoftEdge\User\Default\AppCache\*" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
         Remove-Item -Path "C:\Users\$($_.Name)\AppData\Local\Packages\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\AC\#!121\MicrosoftEdge\User\Default\AppCache\*" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
-        Remove-Item -Path "C:\Users\$($_.Name)\AppData\Local\Packages\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\AC\Temp|RECURSE\*" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
+        Remove-Item -Path "C:\Users\$($_.Name)\AppData\Local\Packages\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\AC\Temp\*" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
 
         }
         Catch {
