@@ -283,18 +283,13 @@ Function Clear_Edge ($a) {
     Import-CSV -Path $a -Header Name | ForEach-Object {
         Try {
     # Update 4 new 
-        Remove-Item -Path "C:\Users\$($_.Name)\AppData\Local\Microsoft\Edge\User Data\Default\Cache\*" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
-        Remove-Item -Path "C:\Users\$($_.Name)\AppData\Local\Microsoft\Edge\User Data\Default\Media Cache\*" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
-        Remove-Item -Path "C:\Users\$($_.Name)\AppData\Local\Microsoft\Edge\User Data\Default\GPUCache\*" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
-        Remove-Item -Path "C:\Users\$($_.Name)\AppData\Local\Microsoft\Edge\User Data\Default\Storage\ext\*" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
-        Remove-Item -Path "C:\Users\$($_.Name)\AppData\Local\Microsoft\Edge\User Data\Default\Service Worker\*" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
-        Remove-Item -Path "C:\Users\$($_.Name)\AppData\Local\Microsoft\Edge\User Data\ShaderCache\*" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
-        Remove-Item -Path "C:\Users\$($_.Name)\AppData\Local\Microsoft\Edge SxS\User Data\Default\Cache\*" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
-        Remove-Item -Path "C:\Users\$($_.Name)\AppData\Local\Microsoft\Edge SxS\User Data\Default\Media Cache\*" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
-        Remove-Item -Path "C:\Users\$($_.Name)\AppData\Local\Microsoft\Edge SxS\User Data\Default\GPUCache\*" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
-        Remove-Item -Path "C:\Users\$($_.Name)\AppData\Local\Microsoft\Edge SxS\User Data\Default\Storage\ext\*" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
-        Remove-Item -Path "C:\Users\$($_.Name)\AppData\Local\Microsoft\Edge SxS\User Data\Default\Service Worker\*" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
-        Remove-Item -Path "C:\Users\$($_.Name)\AppData\Local\Microsoft\Edge SxS\User Data\ShaderCache\*" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
+        Remove-Item -Path "C:\Users\$($_.Name)\AppData\Local\Microsoft\Edge*\User Data\Default\Cache\*" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
+        Remove-Item -Path "C:\Users\$($_.Name)\AppData\Local\Microsoft\Edge*\User Data\Default\Media Cache\*" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
+        Remove-Item -Path "C:\Users\$($_.Name)\AppData\Local\Microsoft\Edge*\User Data\Default\GPUCache\*" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
+        Remove-Item -Path "C:\Users\$($_.Name)\AppData\Local\Microsoft\Edge*\User Data\Default\Storage\ext\*" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
+        Remove-Item -Path "C:\Users\$($_.Name)\AppData\Local\Microsoft\Edge*\User Data\Default\Service Worker\*" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
+        Remove-Item -Path "C:\Users\$($_.Name)\AppData\Local\Microsoft\Edge*\User Data\ShaderCache\*" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
+
     # update 4 old 
         Remove-Item -Path "C:\Users\$($_.Name)\AppData\Local\Packages\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\AC\MicrosoftEdge\Cache\*" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
         Remove-Item -Path "C:\Users\$($_.Name)\AppData\Local\Packages\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\AC\#!001\MicrosoftEdge\Cache\*" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
@@ -575,13 +570,37 @@ Function Clear_logs ($a) {
         Remove-Item -Path "C:\Windows\System32\sru\*" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
         Remove-Item -Path "C:\Windows\DISM\*" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
         Remove-Item -Path "C:\Windows\APPLOG\*" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
+        Remove-Item -Path "C:\Users\$($_.Name)\AppData\Local\ConnectedDevicesPlatform\*.log" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
+        Remove-Item -Path "C:\Users\$($_.Name)\AppData\Local\Diagnostics\*" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
+        Remove-Item -Path "C:\PerfLogs\System\Diagnostics\*" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
+        Remove-Item -Path "C:\PerfLogs\System\Performance\*" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
+        Remove-Item -Path "C:\Windows\AppCompat\Programs\*.xml" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
+        Remove-Item -Path "C:\Windows\AppCompat\Programs\*.txt" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
+        Remove-Item -Path "C:\Windows\AppCompat\Programs\Install\*.xml" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
+        Remove-Item -Path "C:\Windows\AppCompat\Programs\Install\*.txt" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
+        Remove-Item -Path "C:\Windows\debug\WIA\*.log" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
+        Remove-Item -Path "C:\Windows\inf\*.log" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
+        Remove-Item -Path "C:\Windows\Panther\FastCleanup\*.log" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
+        Remove-Item -Path "C:\Windows\repair\*.log" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
+        Remove-Item -Path "C:\Windows\security\logs\*" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
+        Remove-Item -Path "C:\Windows\System32\catroot2\*" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
+        Remove-Item -Path "C:\Windows\System32\LogFiles\*" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
+        Remove-Item -Path "C:\Windows\System32\SleepStudy\*.etl" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
+        Remove-Item -Path "C:\Windows\System32\SleepStudy\ScreenOn\*.etl" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
+        Remove-Item -Path "C:\Windows\System32\sysprep\Panther\IE\*.log" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
+        Remove-Item -Path "C:\Windows\System32\WDI\LogFiles\StartupInfo\*" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
+        Remove-Item -Path "C:\Windows\SoftwareDistribution\DataStore\Logs\*" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
 
     # Windows Remote Desktop Cache
         Remove-Item -Path "C:\Users\$($_.Name)\AppData\Local\Microsoft\Terminal Server Client\Cache\*" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
 
     # Windows Sidebar 
         Remove-Item -Path "C:\Users\$($_.Name)\AppData\Local\Microsoft\Windows Sidebar\Cache\*" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
-
+    # Browser logs 
+        Remove-Item -Path "C:\Users\$($_.Name)\AppData\Local\Moonchild Productions\Basilisk\Profiles\*\weave\logs\*" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
+        Remove-Item -Path "C:\Users\$($_.Name)\AppData\Local\FlashPeak\SlimBrowser\Profiles\*\weave\logs\*" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
+        Remove-Item -Path "C:\Users\$($_.Name)\AppData\Local\Comodo\IceDragon\Profiles\*\weave\logs\*" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
+        Remove-Item -Path "C:\Users\$($_.Name)\AppData\Local\Mozilla\SeaMonkey\Profiles\*\weave\logs\*" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
         }
         Catch {
             Write-Error "ОШИБКА удаления Logs"
